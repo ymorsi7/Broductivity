@@ -142,7 +142,6 @@
 
 										// Window stuff.
 											$window
-												.scrollTop(0)
 												.triggerHandler('resize.flexbox-fix');
 
 										// Unlock.
@@ -181,7 +180,6 @@
 
 										// Window stuff.
 											$window
-												.scrollTop(0)
 												.triggerHandler('resize.flexbox-fix');
 
 										// Unlock.
@@ -240,7 +238,6 @@
 
 							// Window stuff.
 								$window
-									.scrollTop(0)
 									.triggerHandler('resize.flexbox-fix');
 
 							return;
@@ -271,7 +268,6 @@
 
 								// Window stuff.
 									$window
-										.scrollTop(0)
 										.triggerHandler('resize.flexbox-fix');
 
 								// Unlock.
@@ -362,28 +358,7 @@
 
 			});
 
-		// Scroll restoration.
-		// This prevents the page from scrolling back to the top on a hashchange.
-			if ('scrollRestoration' in history)
-				history.scrollRestoration = 'manual';
-			else {
 
-				var	oldScrollPos = 0,
-					scrollPos = 0,
-					$htmlbody = $('html,body');
-
-				$window
-					.on('scroll', function() {
-
-						oldScrollPos = scrollPos;
-						scrollPos = $htmlbody.scrollTop();
-
-					})
-					.on('hashchange', function() {
-						$window.scrollTop(oldScrollPos);
-					});
-
-			}
 
 		// Initialize.
 
